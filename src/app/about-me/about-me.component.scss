@@ -1,0 +1,199 @@
+.vector {
+    background-image: url('/assets/img/vector.svg');
+    width: 100%;
+    background-size: cover;
+    z-index: -1;
+    position: absolute;
+    margin-top: -569px;
+    height: 100%
+}
+
+.line{
+    @media(max-width: 860px) {
+        width: 64px;
+    }
+}
+
+.socialMedia-scrollDown-continer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+
+    a{
+        &:hover{
+            transform: scale(1.5);
+            transition-duration: 250ms;
+        }
+    }
+}
+
+.scroll-down-container {
+    color: white;
+    font-family: Poppins;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.scroll-arrow-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    transform: rotate(90deg);
+
+    img {
+        transform: rotate(-90deg);
+    }
+
+    @media(max-width: 860px) {
+        display: none;
+    }
+}
+
+.arrow-container {
+    width: 24px;
+    height: 24px;
+}
+
+.social-media-mail-container {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    flex-shrink: 0;
+}
+
+.e-mail {
+    color: white;
+    font-family: Poppins;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+    transform: none !important;
+
+    @media(max-width: 860px) {
+        display: none;
+    }
+}
+
+.about-me-text-img{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+.about-me-container {
+    padding-left: 102px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+
+    @media(max-width: 620px) {
+        padding-left: 10px;
+    }
+}
+
+.about-me-headline {
+    width: 471px;
+
+    span {
+        color: white;
+        font-family: Poppins;
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+
+        @media(max-width: 620px) {
+            font-size: 45px !important;
+        }
+    }
+
+    @media(max-width: 620px) {
+        width: 290px;
+    }
+
+}
+
+.about-me-description {
+    width: 471px;
+
+    span {
+        color: white;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+    }
+
+    @media(max-width: 620px) {
+        width: 290px;
+    }
+}
+
+.personal-info-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+
+    @media(max-width:350px) {
+        gap: 25px;
+    }
+}
+
+.personal-info-text {
+    width: 359px;
+    color: white;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+
+    @media(max-width: 620px) {
+        width: 214px;
+    }
+}
+
+.personal-info-img {
+    display: flex;
+    width: 50px;
+    padding: 0px 2px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-me-picture{
+    display: flex;
+    align-items: center;
+    height: 509px;
+
+    @media(max-width: 1315px) {
+        display: none;
+    }
+}
+
+.elipse-img{
+    width: 453px;
+    height: 453px;
+    background-image: url('/assets/img/hero-zoom-img.png');
+    background-size: 260px 350px;
+    background-repeat: no-repeat;
+    background-position: 95px 20px;
+}
+
+.aboutMe-purple-shadow{
+    position: absolute;
+    display: flex;
+    right: 0px;
+    z-index: -1;
+    top: 830px;
+}

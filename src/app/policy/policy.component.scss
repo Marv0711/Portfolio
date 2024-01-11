@@ -1,0 +1,14 @@
+.policy{
+    padding-left: 120px;
+    color: white;
+    font-family: poppins;
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+    @media(max-width: 615px) {
+        padding-left: 10px;
+    }
+}
