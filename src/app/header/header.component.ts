@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ContactComponent } from "../contact/contact.component";
 import { AppComponent } from '../app.component';
-import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,9 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  constructor(public contact: ContactComponent, public translate: TranslateService){}
+  constructor(public contact: ContactComponent){
+
+  }
 
 
 

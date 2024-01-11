@@ -15,6 +15,8 @@ import { PolicyComponent } from './policy/policy.component';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -24,6 +26,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
     declarations: [
         AppComponent,
+        LandingPageComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
