@@ -3,20 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import {TranslateModule} from '@ngx-translate/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutMeComponent } from './about-me/about-me.component';
-import { ContactComponent } from './contact/contact.component';
-import { FooterComponent } from './footer/footer.component';
-import { GardientHeroComponent } from './gardient-hero/gardient-hero.component';
-import { HeaderComponent } from './header/header.component';
-import { ImpressumComponent } from './impressum/impressum.component';
-import { MyProjectsComponent } from './my-projects/my-projects.component';
-import { MySkillsComponent } from './my-skills/my-skills.component';
-import { PolicyComponent } from './policy/policy.component';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-
+import { AboutMeSectionComponent } from './about-me-section/about-me-section.component';
+import {RouterModule} from '@angular/router';
+import { ContactSectionComponent } from './contact-section/contact-section.component';
+import { FooterSectionComponent } from './footer-section/footer-section.component';
+import { GardientHeroSectionComponent } from './gardient-hero-section/gardient-hero-section.component';
+import { HeaderSectionComponent } from './header-section/header-section.component';
+import { ImpressumSectionComponent } from './impressum-section/impressum-section.component';
+import { MyProjectsSectionComponent } from './my-projects-section/my-projects-section.component';
+import { MyPolicySectionComponent } from './my-policy-section/my-policy-section.component';
+import { MySkillsSectionComponent } from './my-skills-section/my-skills-section.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -27,25 +27,26 @@ export function HttpLoaderFactory(http: HttpClient) {
     declarations: [
         AppComponent,
         LandingPageComponent,
+        AboutMeSectionComponent,
+        ContactSectionComponent,
+        FooterSectionComponent,
+        GardientHeroSectionComponent,
+        HeaderSectionComponent,
+        ImpressumSectionComponent,
+        MyProjectsSectionComponent,
+        MyPolicySectionComponent,
+        MySkillsSectionComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
+        RouterModule,
         AppRoutingModule,
-        HeaderComponent,
-        PolicyComponent,
-        ImpressumComponent,
-        GardientHeroComponent,
-        AboutMeComponent,
-        MySkillsComponent,
-        MyProjectsComponent,
-        ContactComponent,
-        FooterComponent,
         HttpClientModule,
         TranslateModule.forRoot(
             {
-                defaultLanguage: 'de',
+                defaultLanguage: 'en',
                 loader: {
                     provide: TranslateLoader,
                     useFactory: HttpLoaderFactory,

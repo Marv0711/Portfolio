@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-landing-page',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
+  constructor(public translate: TranslateService) {
 
+  }
 }

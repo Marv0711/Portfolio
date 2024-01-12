@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ImpressumComponent } from './impressum/impressum.component'
-import { PolicyComponent } from './policy/policy.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ImpressumSectionComponent } from './impressum-section/impressum-section.component';
+import { MyPolicySectionComponent } from './my-policy-section/my-policy-section.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
-  { path: 'impressum', component: ImpressumComponent },
-  { path: 'policy', component: PolicyComponent }
+  { path: 'impressum', component: ImpressumSectionComponent },
+  { path: 'policy', component: MyPolicySectionComponent }
 ];
 
 @NgModule({
