@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header-section',
@@ -8,6 +9,9 @@ import { Component } from '@angular/core';
 export class HeaderSectionComponent {
   activeSection: string = '';
 
+  constructor(public translate: TranslateService) {
+    
+  }
 
   activButton(section: string): void {
     this.activeSection = section;

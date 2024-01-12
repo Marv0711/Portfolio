@@ -6,8 +6,8 @@
     <a [ngClass]="{ 'activ-button': activeSection == 'skills' }" (click)="activButton('skills')" href="#skills">Skills</a>
     <a [ngClass]="{ 'activ-button': activeSection == 'portfolio' }" (click)="activButton('portfolio')" href="#portfolio">Portfolio</a>
     <a [ngClass]="{ 'activ-button': activeSection == 'contact' }" (click)="activButton('contact')" href="#contact">Contact</a>
-    <a>DE</a>
-    <a>EN</a>
+    <a (click)="translate.use('de')">DE</a>
+    <a (click)="translate.use('en')">EN</a>
 </div>
 <input type="checkbox" id="checkbox4" class="checkbox4 visuallyHidden">
 <label for="checkbox4">
