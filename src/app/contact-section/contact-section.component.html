@@ -1,13 +1,13 @@
 <div class="headline-vector">
     <img src="assets/img/LINE 5.svg" alt="">
-    <div id="contact">Contact</div>
+    <div translate id="contact">Contact</div>
 </div>
 <div class="text-form">
     <div class="contact-text">
-        <div class="contact-text-headline">Got a problem to solve?</div>
-        <div class="contact-text-small">
-            <div>Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to your projects with my work.</div>
-            <div>Need a Frontend developer? <strong>Contact me!</strong></div>
+        <div translate class="contact-text-headline">Got a problem to solve?</div>
+        <div translate class="contact-text-small">
+            <div translate>Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to your projects with my work.</div>
+            <div translate>Need a Frontend developer?<strong translate>Contact me!</strong></div>
         </div>
     </div>
     <div class="contact-form">
@@ -15,23 +15,26 @@
         method="POST">
             <div>
                 <div id="input-name" class="input-container">
-                    <input (focus)="checkInput($event, 'showIconName')" (input)="checkInput($event, 'showIconName')" type="text" name="name" placeholder="Your name" required>
+                    <input class="input-english" (focus)="checkInput($event, 'showIconName')" (input)="checkInput($event, 'showIconName')" type="text" name="name" placeholder="Your name" required>
+                    <input class="input-german d-none" (focus)="checkInput($event, 'showIconName')" (input)="checkInput($event, 'showIconName')" type="text" name="name" placeholder="Ihr Name" required>
                     <img *ngIf="showIconName && nameFirstClick" src="assets/img/error.svg" alt="">
                     <img *ngIf="!showIconName && nameFirstClick" src="assets/img/ok.svg" alt="">
                 </div>
-                <span *ngIf="showIconName && nameFirstClick">Your name is required</span>
+                <span translate *ngIf="showIconName && nameFirstClick">Your name is required</span>
             </div>
             <div>
                 <div id="input-mail" class="input-container">
-                    <input (focus)="checkInput($event, 'showIconEmail')" (input)="checkInput($event, 'showIconEmail')" required type="email" name="email" placeholder="Your email">
+                    <input class="input-english" (focus)="checkInput($event, 'showIconEmail')" (input)="checkInput($event, 'showIconEmail')" required type="email" name="email" placeholder="Your email">
+                    <input class="input-german d-none" (focus)="checkInput($event, 'showIconName')" (input)="checkInput($event, 'showIconName')" type="text" name="name" placeholder="Ihre Email" required>
                     <img *ngIf="showIconEmail && EmailFirstClick" src="assets/img/error.svg" alt="">
                     <img *ngIf="!showIconEmail && EmailFirstClick" src="assets/img/ok.svg" alt="">
                 </div>
-                <span *ngIf="showIconEmail && EmailFirstClick">Your email is required</span>
+                <span translate *ngIf="showIconEmail && EmailFirstClick">Your email is required</span>
             </div>
             <div>
                 <div id="input-message" class="textarea-container">
-                    <textarea (focus)="checkInput($event, 'showIconMessage')" (input)="checkInput($event, 'showIconMessage')" required type="text" name="message" placeholder="Your message"></textarea>
+                    <textarea class="input-english" (focus)="checkInput($event, 'showIconMessage')" (input)="checkInput($event, 'showIconMessage')" required type="text" name="message" placeholder="Your message"></textarea>
+                    <textarea class="input-german d-none" (focus)="checkInput($event, 'showIconMessage')" (input)="checkInput($event, 'showIconMessage')" required type="text" name="message" placeholder="Ihre Nachricht"></textarea>
                     <img *ngIf="showIconMessage && MessageFirstClick" src="assets/img/error.svg" alt="">
                     <img *ngIf="!showIconMessage && MessageFirstClick" src="assets/img/ok.svg" alt="">
                     <div class="resize"></div>
@@ -44,17 +47,20 @@
                         <img (click)="checkBoxCklick(); buttonActiv()" class="box-img" *ngIf="!checkboxClicked" src="assets/img/box.svg" alt="">
                         <img (click)="checkBoxCklick(); buttonActiv()" class="box-img" *ngIf="checkboxClicked" src="assets/img/boxclicked.svg" alt="">
                         <div class="text-container">
-                            <p class="normal-text">I've read the&nbsp;<a target="_blank" (click)="toPolicy()">privacy policy</a>&nbsp;and agree to the processing of my data as outlined.</p>    
+                            <p id="textEnglish" class="normal-text">I've read the&nbsp;<a translate target="_blank" (click)="toPolicy()">privacy policy</a>&nbsp;and agree to the processing of my data as outlined.</p>
+                            <p id="textGerman" class="normal-text d-none">Ich habe die&nbsp;<a translate target="_blank" (click)="toPolicy()">Datenschutzbestimmungen</a>&nbsp; gelesen und erkläre mich mit der Verarbeitung meiner Daten wie beschrieben einverstanden.</p>   
                         </div>
                     </div>
                     <div style="padding: 5px 4px;">
-                        <span *ngIf="!checkboxClicked && BoxFirstClick">Please accept the privacy policy.</span>
+                        <span translate *ngIf="!checkboxClicked && BoxFirstClick">Please accept the privacy policy.</span>
                     </div>
                 </div>
-                <div><button type="submit" class="disable-design" id="sendMessageButton" [disabled]="isButtonDisabled">Send message :&#41;</button></div>
+                <div>
+                    <button translate type="submit" class="disable-design" id="sendMessageButton" [disabled]="isButtonDisabled"><span class="button-text" translate>Send message </span> :&#41;</button>
+                </div>
             </div>
         </form>
         <div class="arrow-over-container"><img (click)="up()" (mouseleave)="swapImgBack()" (mouseenter)="swapImg()" id="arrow-up" class="arrow-up-container"src="/assets/img/arrow-up-line.svg" alt=""></div>
-        <img class="shadow" src="assets/img/contact-shadow.svg" alt="">
+        <img id="shadowEnglish" class="shadow" src="assets/img/contact-shadow.svg" alt="">
     </div>
 </div>

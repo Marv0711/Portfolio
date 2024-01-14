@@ -6,8 +6,11 @@
     <a [ngClass]="{ 'activ-button': activeSection == 'skills' }" (click)="activButton('skills')" href="#skills">Skills</a>
     <a [ngClass]="{ 'activ-button': activeSection == 'portfolio' }" (click)="activButton('portfolio')" href="#portfolio">Portfolio</a>
     <a [ngClass]="{ 'activ-button': activeSection == 'contact' }" (click)="activButton('contact')" href="#contact">Contact</a>
-    <a (click)="translate.use('de')">DE</a>
-    <a (click)="translate.use('en')">EN</a>
+    <div class="la-container">
+        <a [ngClass]="{ 'activ-button': activeSectionLanguage == 'english' }" (click)="activButtonLanguage('english')" class="langue" (click)="translate.use('de'); laGerman()">DE</a>
+        <div style="border-bottom: 23px solid white; height: 2px; width: 2px;"></div>
+        <a [ngClass]="{ 'activ-button': activeSectionLanguage == 'german' }" (click)="activButtonLanguage('german')" class="langue" (click)="translate.use('en'); laEnglish()">EN</a>
+    </div>
 </div>
 <input type="checkbox" id="checkbox4" class="checkbox4 visuallyHidden">
 <label for="checkbox4">
@@ -24,4 +27,6 @@
     <a [ngClass]="{ 'activ-button': activeSection == 'skills' }" (click)="activButton('skills')" href="#skills">Skills</a>
     <a [ngClass]="{ 'activ-button': activeSection == 'portfolio' }" (click)="activButton('portfolio')" href="#portfolio">Portfolio</a>
     <a [ngClass]="{ 'activ-button': activeSection == 'contact' }" (click)="activButton('contact')" href="#contact">Contact</a>
+        <a [ngClass]="{ 'activ-button': activeSectionLanguage == 'english' }" (click)="activButtonLanguage('english')" class="langue" (click)="translate.use('de'); laGerman()">DE</a>
+        <a [ngClass]="{ 'activ-button': activeSectionLanguage == 'german' }" (click)="activButtonLanguage('german')" class="langue" (click)="translate.use('en'); laEnglish()">EN</a>
 </div>

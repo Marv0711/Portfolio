@@ -287,7 +287,7 @@
     @media(max-width: 1410px) {
         width: 290.964px;
         height: 342.535px;
-        top: 4350px;
+        top: 4650px;
     }
 }
 
@@ -296,6 +296,7 @@
     right: 0;
     top: 4000px;
     filter: blur(5.5px);
+    z-index: -1;
 
     @media(max-width: 800px) {
         width: 193.252px;

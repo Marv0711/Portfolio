@@ -1,5 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { MySkillsSectionComponent } from '../my-skills-section/my-skills-section.component';
+import { BehaviorSubject } from 'rxjs';
+import { ContactSectionComponent } from '../contact-section/contact-section.component';
+
+@Injectable({
+  providedIn: 'root'
+})
+
 
 @Component({
   selector: 'app-header-section',
@@ -8,13 +16,18 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderSectionComponent {
   activeSection: string = '';
+  activeSectionLanguage: string = '';
 
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService, private skills: MySkillsSectionComponent, private contact: ContactSectionComponent) {
     
   }
 
-  activButton(section: string): void {
+  activButton(section: string) {
     this.activeSection = section;
+  }
+
+  activButtonLanguage(section: string){
+    this.activeSectionLanguage = section;
   }
 
   up(){
@@ -24,5 +37,15 @@ export class HeaderSectionComponent {
   openMenu(){
     let menu = document.getElementById('menu');
     menu?.classList.toggle('open');
+  }
+
+  laGerman(){
+    this.skills.laGerman();
+    this.contact.laGerman();
+  }
+
+  laEnglish(){
+    this.skills.laEnglish();
+    this.contact.laEnglish();
   }
 }

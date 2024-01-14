@@ -193,7 +193,7 @@
 
     @media(max-width: 620px) {
         text-align: left;
-        width: 338px;
+        width: 311px;
     }
 }
 
@@ -201,6 +201,14 @@
     @media(max-width: 620px) {
         display: none;
     }
+}
+
+.mobile-german{
+    font-size: 54px !important;
+
+    @media(max-width: 596px) {
+        font-size: 24px !important;
+    }    
 }
 
 .button-container {

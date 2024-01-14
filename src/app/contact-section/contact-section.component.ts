@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import {Router} from '@angular/router';
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-contact-section',
@@ -19,6 +23,7 @@ export class ContactSectionComponent {
   isButtonDisabled = true;
 
   constructor(private router: Router) {}
+  german = false;
 
   toPolicy(){
     this.router.navigateByUrl('/policy');
@@ -161,5 +166,39 @@ export class ContactSectionComponent {
     }).catch((error) => {
       console.log(error);
     });
+  }
+
+  laGerman(){
+    document.getElementById('textEnglish')?.classList.add('d-none');
+    document.getElementById('textGerman')?.classList.remove('d-none');
+
+    let englishInputs = document.querySelectorAll('.input-english');
+    englishInputs.forEach(element => {
+      element.classList.add('d-none')
+    });
+
+    let germanInputs = document.querySelectorAll('.input-german');
+    germanInputs.forEach(elementgerman => {
+      elementgerman.classList.remove('d-none')
+    });
+
+    document.getElementById('shadowEnglish')?.classList.add('shadow-german');
+  }
+
+  laEnglish(){
+    document.getElementById('textEnglish')?.classList.remove('d-none');
+    document.getElementById('textGerman')?.classList.add('d-none');
+
+    let englishInputs = document.querySelectorAll('.input-english');
+    englishInputs.forEach(element => {
+      element.classList.remove('d-none')
+    });
+
+    let germanInputs = document.querySelectorAll('.input-german');
+    germanInputs.forEach(elementgerman => {
+      elementgerman.classList.add('d-none')
+    });
+
+    document.getElementById('shadowEnglish')?.classList.remove('shadow-german');
   }
 }

@@ -1,6 +1,10 @@
 .logo {
     width: 175px;
     object-fit: cover;
+
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 a {
@@ -19,7 +23,19 @@ a {
 
 .navBar-container{
     display: flex;
+    align-items: center;
     gap: 29px;
+
+    @media(max-width: 850px) {
+        display: none;
+    }
+
+}
+
+.la-container{
+    gap: 10px;
+    display: flex;
+    align-items: center;
 
     @media(max-width: 850px) {
         display: none;
@@ -177,4 +193,10 @@ label{
 
 .open{
     display: flex !important;
+}
+
+.langue{
+    &:hover{
+        cursor: pointer;
+    }
 }
