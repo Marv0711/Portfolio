@@ -13,10 +13,6 @@ export class FooterSectionComponent {
     window.scrollTo(0, 0);
   }
 
-  backToLandingPage(){
-    this.router.navigateByUrl('/policy');
-  }
-
   scrolled = 0;
 
   @HostListener('window:scroll', ['$event'])

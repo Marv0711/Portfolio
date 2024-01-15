@@ -1,4 +1,4 @@
-import { Component, HostListener, Injectable } from '@angular/core';
+import { Component, ElementRef, HostListener, Injectable, ViewChild } from '@angular/core';
 import {Router} from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -22,8 +22,65 @@ export class ContactSectionComponent {
   BoxFirstClick = false
 
   isButtonDisabled = true;
+  isCheckboxDisabled = false;
 
   constructor(public translate: TranslateService, private router: Router, ) {}
+
+  @ViewChild('myFormEnglish') myFormEnglish!: ElementRef;
+  @ViewChild('myFormGerman') myFormGerman!:ElementRef
+
+  @ViewChild('namefieldEnglish') namefieldEnglish!: ElementRef;
+  @ViewChild('namefieldGerman') namefieldGerman!:ElementRef
+
+  @ViewChild('mailfieldEnglish') mailfieldEnglish!: ElementRef;
+  @ViewChild('mailfieldGerman') mailfieldGerman!:ElementRef
+
+  @ViewChild('messagefieldEnglish') messagefieldEnglish!: ElementRef;
+  @ViewChild('messagefieldGerman') messagefieldGerman!:ElementRef
+
+  @ViewChild('buttonEnglish') buttonEnglish!: ElementRef;
+  @ViewChild('buttonGerman') buttonGerman!:ElementRef
+
+
+  async sendMessage() {
+  // action = url
+
+  let isGerman = this.translate.currentLang === 'de';
+  console.log(isGerman ? this.myFormGerman : this.myFormEnglish);
+  
+  if(isGerman){
+    this.setFieldState(this.namefieldGerman);
+    this.setFieldState(this.mailfieldGerman);
+    this.setFieldState(this.messagefieldGerman);
+    this.setFieldState(this.buttonGerman);
+  }
+  else{
+    this.setFieldState(this.namefieldEnglish);
+    this.setFieldState(this.mailfieldEnglish);
+    this.setFieldState(this.messagefieldEnglish);
+    this.setFieldState(this.buttonEnglish);
+  }
+
+  this.isButtonDisabled = true;
+  this.isCheckboxDisabled = true;
+
+    let fd = new FormData()
+    fd.append('name', '')
+    fd.append('email', '')
+    fd.append('message', '')
+    await fetch('url',
+      {
+        method: 'POST',
+        body: fd
+      }
+    )
+  }
+
+  setFieldState(field: ElementRef): void {
+    if (field) {
+      field.nativeElement.disabled = true;
+    }
+  }
 
   toPolicy(){
     this.router.navigateByUrl('/policy');
@@ -99,13 +156,20 @@ export class ContactSectionComponent {
   }
 
   checkBoxCklick() {
-    this.BoxFirstClick = true;
+    if(!this.isCheckboxDisabled)
+    {
+      this.BoxFirstClick = true;
     
-    if (this.checkboxClicked) {
-      this.checkboxClicked = false;
+      if (this.checkboxClicked) {
+        this.checkboxClicked = false;
+      }
+      else {
+        this.checkboxClicked = true;
+      }
+      this.buttonActiv();
     }
-    else {
-      this.checkboxClicked = true;
+    else{
+
     }
   }
 
@@ -124,23 +188,6 @@ export class ContactSectionComponent {
   public up() {
     window.scrollTo({
       top: 0,
-    });
-  }
-
-  sendMessage(event:any) {
-    debugger
-    event.preventDefault();
-    const data = new FormData(event.target);
-
-    fetch("https://formspree.io/f/mrgngyqo", {
-      method: "POST",
-      body: new FormData(event.target),
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(() => {
-    }).catch((error) => {
-      console.log(error);
     });
   }
 

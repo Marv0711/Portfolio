@@ -17,6 +17,8 @@ import { ImpressumSectionComponent } from './impressum-section/impressum-section
 import { MyProjectsSectionComponent } from './my-projects-section/my-projects-section.component';
 import { MyPolicySectionComponent } from './my-policy-section/my-policy-section.component';
 import { MySkillsSectionComponent } from './my-skills-section/my-skills-section.component';
+import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms'
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -42,6 +44,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     imports: [
         BrowserModule,
         RouterModule,
+        FormsModule,
+        ReactiveFormsModule,
         AppRoutingModule,
         HttpClientModule,
         TranslateModule.forRoot(

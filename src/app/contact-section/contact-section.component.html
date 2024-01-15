@@ -13,42 +13,34 @@
             </div>
         </div>
         <div class="contact-form">
-            <form onsubmit="sendMessage($event); return false;" action="https://formspree.io/f/mrgngyqo" method="POST">
+            <form #myFormEnglish [ngClass]="{'d-none': translate.currentLang === 'de'}">
                 <div>
-                    <div [ngClass]="{ 'falseInput': showIconName && nameFirstClick, 'rightInput': !showIconName && nameFirstClick}" class="input-container">
-                        <input
-                            class="input-english" (focus)="checkInput($event, 'showIconName')"
-                            (input)="checkInput($event, 'showIconName')" type="text" name="name" placeholder="Your name"
-                            required>
-                        <input class="input-german d-none" (focus)="checkInput($event, 'showIconName')"
-                            (input)="checkInput($event, 'showIconName')" type="text" name="name" placeholder="Ihr Name"
-                            required>
+                    <div [ngClass]="{ 'falseInput': showIconName && nameFirstClick, 'rightInput': !showIconName && nameFirstClick}"
+                        class="input-container">
+                        <input #namefieldEnglish (focus)="checkInput($event, 'showIconName')" (input)="checkInput($event, 'showIconName')"
+                            type="text" name="name" placeholder="Your name" required>
                         <img *ngIf="showIconName && nameFirstClick" src="assets/img/error.svg" alt="">
                         <img *ngIf="!showIconName && nameFirstClick" src="assets/img/ok.svg" alt="">
                     </div>
                     <span translate *ngIf="showIconName && nameFirstClick">Your name is required</span>
                 </div>
                 <div>
-                    <div [ngClass]="{ 'falseInput': showIconEmail && EmailFirstClick, 'rightInput': !showIconEmail && EmailFirstClick}" class="input-container">
-                        <input class="input-english" (focus)="checkInput($event, 'showIconEmail')"
+                    <div [ngClass]="{ 'falseInput': showIconEmail && EmailFirstClick, 'rightInput': !showIconEmail && EmailFirstClick}"
+                        class="input-container">
+                        <input #mailfieldEnglish (focus)="checkInput($event, 'showIconEmail')"
                             (input)="checkInput($event, 'showIconEmail')" required type="email" name="email"
                             placeholder="Your email">
-                        <input class="input-german d-none" (focus)="checkInput($event, 'showIconName')"
-                            (input)="checkInput($event, 'showIconName')" type="text" name="name"
-                            placeholder="Ihre Email" required>
                         <img *ngIf="showIconEmail && EmailFirstClick" src="assets/img/error.svg" alt="">
                         <img *ngIf="!showIconEmail && EmailFirstClick" src="assets/img/ok.svg" alt="">
                     </div>
                     <span translate *ngIf="showIconEmail && EmailFirstClick">Your email is required</span>
                 </div>
                 <div>
-                    <div [ngClass]="{ 'falseInput': showIconMessage && MessageFirstClick, 'rightInput': !showIconMessage && MessageFirstClick}" class="textarea-container">
-                        <textarea class="input-english" (focus)="checkInput($event, 'showIconMessage')"
+                    <div [ngClass]="{ 'falseInput': showIconMessage && MessageFirstClick, 'rightInput': !showIconMessage && MessageFirstClick}"
+                        class="textarea-container">
+                        <textarea #messagefieldEnglish (focus)="checkInput($event, 'showIconMessage')"
                             (input)="checkInput($event, 'showIconMessage')" required type="text" name="message"
                             placeholder="Your message"></textarea>
-                        <textarea class="input-german d-none" (focus)="checkInput($event, 'showIconMessage')"
-                            (input)="checkInput($event, 'showIconMessage')" required type="text" name="message"
-                            placeholder="Ihre Nachricht"></textarea>
                         <img *ngIf="showIconMessage && MessageFirstClick" src="assets/img/error.svg" alt="">
                         <img *ngIf="!showIconMessage && MessageFirstClick" src="assets/img/ok.svg" alt="">
                         <div class="resize"></div>
@@ -58,16 +50,18 @@
                 <div class="box-button-container">
                     <div class="text-warning-container">
                         <div class="box-text-container">
-                            <img (click)="checkBoxCklick(); buttonActiv()" class="box-img" *ngIf="!checkboxClicked"
+                            <img #checkboxEnglish (click)="checkBoxCklick()" class="box-img" *ngIf="!checkboxClicked"
                                 src="assets/img/box.svg" alt="">
-                            <img (click)="checkBoxCklick(); buttonActiv()" class="box-img" *ngIf="checkboxClicked"
+                            <img #checkboxEnglish (click)="checkBoxCklick()" class="box-img" *ngIf="checkboxClicked"
                                 src="assets/img/boxclicked.svg" alt="">
                             <div class="text-container">
-                                <p [ngClass]="{ 'd-none': translate.currentLang == 'de'}" class="normal-text">I've read the&nbsp;<a translate target="_blank"
-                                        (click)="toPolicy()">privacy policy</a>&nbsp;and agree to the processing of my
+                                <p [ngClass]="{ 'd-none': translate.currentLang == 'de'}" class="normal-text">I've read
+                                    the&nbsp;<a translate target="_blank" (click)="toPolicy()">privacy
+                                        policy</a>&nbsp;and agree to the processing of my
                                     data as outlined.</p>
-                                <p [ngClass]="{ 'd-flex': translate.currentLang == 'de'}" class="normal-text d-none">Ich habe die&nbsp;<a translate
-                                        target="_blank" (click)="toPolicy()">Datenschutzbestimmungen</a>&nbsp; gelesen
+                                <p [ngClass]="{ 'd-flex': translate.currentLang == 'de'}" class="normal-text d-none">Ich
+                                    habe die&nbsp;<a translate target="_blank"
+                                        (click)="toPolicy()">Datenschutzbestimmungen</a>&nbsp; gelesen
                                     und erkläre mich mit der Verarbeitung meiner Daten wie beschrieben einverstanden.
                                 </p>
                             </div>
@@ -78,12 +72,85 @@
                         </div>
                     </div>
                     <div>
-                        <button translate [ngClass]="{ 'disable-design': isButtonDisabled || showIconName || showIconEmail || showIconMessage }" type="submit"
-                            [disabled]="isButtonDisabled"><span class="button-text" translate>Send message </span>
+                        <button #buttonEnglish translate
+                            [ngClass]="{ 'disable-design': isButtonDisabled || showIconName || showIconEmail || showIconMessage }"
+                            (click)="sendMessage()" [disabled]="isButtonDisabled"><span class="button-text" translate>Send message
+                            </span>
                             :&#41;</button>
                     </div>
                 </div>
             </form>
+            <div [ngClass]="{'d-flex': translate.currentLang === 'de'}" class="contact-form d-none">
+                <form #myFormGerman>
+                    <div>
+                        <div [ngClass]="{ 'falseInput': showIconName && nameFirstClick, 'rightInput': !showIconName && nameFirstClick}"
+                            class="input-container">
+                            <input #namefieldGerman (focus)="checkInput($event, 'showIconName')"
+                                (input)="checkInput($event, 'showIconName')" type="text" name="name"
+                                placeholder="Ihr Name" required>
+                            <img *ngIf="showIconName && nameFirstClick" src="assets/img/error.svg" alt="">
+                            <img *ngIf="!showIconName && nameFirstClick" src="assets/img/ok.svg" alt="">
+                        </div>
+                        <span translate *ngIf="showIconName && nameFirstClick">Ihr Name ist wichtig</span>
+                    </div>
+                    <div>
+                        <div [ngClass]="{ 'falseInput': showIconEmail && EmailFirstClick, 'rightInput': !showIconEmail && EmailFirstClick}"
+                            class="input-container">
+                            <input #mailfieldGerman (focus)="checkInput($event, 'showIconEmail')"
+                                (input)="checkInput($event, 'showIconEmail')" required type="email" name="email"
+                                placeholder="Ihre E-Mail">
+                            <img *ngIf="showIconEmail && EmailFirstClick" src="assets/img/error.svg" alt="">
+                            <img *ngIf="!showIconEmail && EmailFirstClick" src="assets/img/ok.svg" alt="">
+                        </div>
+                        <span translate *ngIf="showIconEmail && EmailFirstClick">Ihr E-Mail ist wichtig</span>
+                    </div>
+                    <div>
+                        <div [ngClass]="{ 'falseInput': showIconMessage && MessageFirstClick, 'rightInput': !showIconMessage && MessageFirstClick}"
+                            class="textarea-container">
+                            <textarea #messagefieldGerman (focus)="checkInput($event, 'showIconMessage')"
+                                (input)="checkInput($event, 'showIconMessage')" required type="text" name="message"
+                                placeholder="Ihre Nachricht"></textarea>
+                            <img *ngIf="showIconMessage && MessageFirstClick" src="assets/img/error.svg" alt="">
+                            <img *ngIf="!showIconMessage && MessageFirstClick" src="assets/img/ok.svg" alt="">
+                            <div class="resize"></div>
+                        </div>
+                        <span *ngIf="showIconMessage && MessageFirstClick">Ihre Nachricht ist leer</span>
+                    </div>
+                    <div class="box-button-container">
+                        <div class="text-warning-container">
+                            <div class="box-text-container">
+                                <img #checkboxGerman (click)="checkBoxCklick(); buttonActiv()" class="box-img" *ngIf="!checkboxClicked"
+                                    src="assets/img/box.svg" alt="">
+                                <img #checkboxGerman (click)="checkBoxCklick(); buttonActiv()" class="box-img" *ngIf="checkboxClicked"
+                                    src="assets/img/boxclicked.svg" alt="">
+                                <div class="text-container">
+                                    <p [ngClass]="{ 'd-none': translate.currentLang == 'de'}" class="normal-text">I've
+                                        read the&nbsp;<a translate target="_blank" (click)="toPolicy()">privacy
+                                            policy</a>&nbsp;and agree to the processing of my
+                                        data as outlined.</p>
+                                    <p [ngClass]="{ 'd-flex': translate.currentLang == 'de'}"
+                                        class="normal-text d-none">Ich habe die&nbsp;<a translate target="_blank"
+                                            (click)="toPolicy()">Datenschutzbestimmungen</a>&nbsp; gelesen
+                                        und erkläre mich mit der Verarbeitung meiner Daten wie beschrieben
+                                        einverstanden.
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="padding: 5px 4px;">
+                                <span translate *ngIf="!checkboxClicked && BoxFirstClick">Please accept the privacy
+                                    policy.</span>
+                            </div>
+                        </div>
+                        <div>
+                            <button #buttonGerman (click)="sendMessage()" translate
+                                [ngClass]="{ 'disable-design': isButtonDisabled || showIconName || showIconEmail || showIconMessage }"
+                                type="submit" [disabled]="isButtonDisabled"><span class="button-text" translate>Send
+                                    message </span>
+                                :&#41;</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
             <div class="arrow-over-container"><img (click)="up()" (mouseleave)="swapImgBack()" (mouseenter)="swapImg()"
                     id="arrow-up" class="arrow-up-container" src="/assets/img/arrow-up-line.svg" alt=""></div>
             <img id="shadowEnglish" class="shadow" src="assets/img/contact-shadow.svg" alt="">
