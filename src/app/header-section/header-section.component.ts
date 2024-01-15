@@ -19,7 +19,7 @@ export class HeaderSectionComponent {
   activeSection: string = '';
   activeSectionLanguage: string = '';
 
-  constructor(public translate: TranslateService, private skills: MySkillsSectionComponent, private contact: ContactSectionComponent) {
+  constructor(public translate: TranslateService, private contact: ContactSectionComponent) {
     
   }
 
@@ -41,13 +41,10 @@ export class HeaderSectionComponent {
   }
 
   laGerman(){
-    this.skills.language = 'german';
-    this.skills.laGerman();
-    //this.contact.laGerman();
+    this.contact.laGerman();
   }
 
   laEnglish(){
-    this.skills.laEnglish();
     this.contact.laEnglish();
   }
 }

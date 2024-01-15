@@ -1,3 +1,24 @@
 {
-    "About me": "About me"
+    "About me": "About me",
+    "INTRO":"Hello, I am a Frontend Developer based in Dresden, Germany. Originally coming from the IT field, I made the transition to software development with the help of a bootcamp, discovering my passion for crafting engaging and user-friendly user interfaces along the way.",
+    "FACT_1":"When I'm not in front of a screen, I enjoy spending time with my family and friends. Shared laughter and the creation of lasting memories are precious moments for me. Life is made up of a fascinating blend of digital pixels and personal connections. I look forward to incorporating this perspective into my work.",
+    "I am": "Ich bin",
+    "FACT_2":"At the same time, I appreciate the simplicity of everyday life and the ability to overcome complex problems through thoughtful thinking. In the world of zeros and ones, I seek elegant solutions that are not only functional but also tailored to the end user.Part-time, I am studying Cyber Security on the IU. The constantly advancing nature of the IT landscape fascinates me, and I am enthusiastic about deepening my knowledge to contribute to the security of future digital spaces.",
+    "My skills": "My skills",
+    "I've acquired expertise in developing projects utilizing diverse frontend technologies and concepts.": "I've acquired expertise in developing projects utilizing diverse frontend technologies and concepts.",
+    "This page is a sample of my work - please feel free to try them out.": "This page is a sample of my work - please feel free to try them out.",
+    "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+    "A simple Jump-and-Run game based on an object-oriented approach. Help El-Pollo-Loco to find coins and poison bottles to fight against the killer chicken.": "A simple Jump-and-Run game based on an object-oriented approach. Help El-Pollo-Loco to find coins and poison bottles to fight against the killer chicken.",
+    "Ring of Fire: Card-based drinking game with rule-assigned actions": "Ring of Fire: Card-based drinking game with rule-assigned actions",
+    "Based on the PokéAPI a simple library that provides and catalogs Pokémon information.": "Based on the PokéAPI a simple library that provides and catalogs Pokémon information.",
+    "Contact": "Contact",
+    "Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to your projects with my work.": "Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to your projects with my work.",
+    "Need a Frontend developer?": "Need a Frontend developer?",
+    "Your name is required": "Your name is required",
+    "Your email is required": "Your email is required",
+    "Your message is empty": "Your message is empty",
+    "Got a problem to solve?": "Got a problem to solve?",
+    "Contact me!": "Contact me!",
+    "Get in touch": "Get in touch",
+    "Send message": "Send message"
 }

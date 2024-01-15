@@ -1,5 +1,6 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, HostListener, Injectable } from '@angular/core';
 import {Router} from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +23,7 @@ export class ContactSectionComponent {
 
   isButtonDisabled = true;
 
-  constructor(private router: Router) {}
-  german = false;
+  constructor(public translate: TranslateService, private router: Router, ) {}
 
   toPolicy(){
     this.router.navigateByUrl('/policy');
@@ -31,17 +31,7 @@ export class ContactSectionComponent {
 
 
   buttonActiv() {
-    let button = document.getElementById('sendMessageButton');
     this.isButtonDisabled = !this.isButtonDisabled
-
-    if (!this.isButtonDisabled && !this.showIconName && !this.showIconEmail && !this.showIconMessage) {
-      button?.classList.remove('disable-design')
-    }
-
-    else if (this.isButtonDisabled || this.showIconName || this.showIconEmail || this.showIconMessage) {
-      button?.classList.add('disable-design')
-    }
-
   }
 
 
@@ -68,14 +58,10 @@ export class ContactSectionComponent {
     if (atIndex < activInputfield.value.length - 1) {
       this.showIconEmail = false;
       this.EmailFirstClick = true;
-      document.getElementById('input-mail')?.classList.remove('falseInput');
-      document.getElementById('input-mail')?.classList.add('rightInput');
     }
     else {
       this.showIconEmail = true;
       this.EmailFirstClick = true;
-      document.getElementById('input-mail')?.classList.remove('rightInput');
-      document.getElementById('input-mail')?.classList.add('falseInput');
     }
   }
 
@@ -83,14 +69,10 @@ export class ContactSectionComponent {
     if (isInputEmpty) {
       this.showIconMessage = isInputEmpty;
       this.MessageFirstClick = true;
-      document.getElementById('input-message')?.classList.remove('rightInput');
-      document.getElementById('input-message')?.classList.add('falseInput');
     }
     else {
       this.showIconMessage = isInputEmpty;
       this.MessageFirstClick = true;
-      document.getElementById('input-message')?.classList.remove('falseInput');
-      document.getElementById('input-message')?.classList.add('rightInput');
     }
   }
 
@@ -98,14 +80,10 @@ export class ContactSectionComponent {
     if (isInputEmpty) {
       this.showIconName = isInputEmpty;
       this.nameFirstClick = true;
-      document.getElementById('input-name')?.classList.add('falseInput');
-      document.getElementById('input-name')?.classList.remove('rightInput');
     }
     else if (!isInputEmpty) {
       this.showIconName = isInputEmpty;
       this.nameFirstClick = true;
-      document.getElementById('input-name')?.classList.remove('falseInput');
-      document.getElementById('input-name')?.classList.add('rightInput');
     }
   }
 
@@ -117,8 +95,6 @@ export class ContactSectionComponent {
     else {
       this.showIconEmail = true;
       this.EmailFirstClick = true;
-      document.getElementById('input-mail')?.classList.remove('rightInput');
-      document.getElementById('input-mail')?.classList.add('falseInput');
     }
   }
 
@@ -169,9 +145,6 @@ export class ContactSectionComponent {
   }
 
   laGerman(){
-    document.getElementById('textEnglish')?.classList.add('d-none');
-    document.getElementById('textGerman')?.classList.remove('d-none');
-
     let englishInputs = document.querySelectorAll('.input-english');
     englishInputs.forEach(element => {
       element.classList.add('d-none')
@@ -182,14 +155,9 @@ export class ContactSectionComponent {
       elementgerman.classList.remove('d-none')
     });
 
-    document.getElementById('shadowEnglish')?.classList.add('shadow-german');
-    document.getElementById('shadowEnglish')?.classList.remove('shadow');
   }
 
   laEnglish(){
-    document.getElementById('textEnglish')?.classList.remove('d-none');
-    document.getElementById('textGerman')?.classList.add('d-none');
-
     let englishInputs = document.querySelectorAll('.input-english');
     englishInputs.forEach(element => {
       element.classList.remove('d-none')
@@ -199,8 +167,20 @@ export class ContactSectionComponent {
     germanInputs.forEach(elementgerman => {
       elementgerman.classList.add('d-none')
     });
+  }
 
-    document.getElementById('shadowEnglish')?.classList.remove('shadow-german');
-    document.getElementById('shadowEnglish')?.classList.add('shadow');
+  scrolled = 0;
+
+  @HostListener('window:scroll', ['$event'])
+  
+  onWindowScroll() {
+    let numb = window.scrollY;
+    
+    if (numb >= 4100){
+      this.scrolled = 1;
+    }
+    else {
+      this.scrolled = 0;
+    }
   }
 }

@@ -17,6 +17,17 @@
     }
 }
 
+.fly-in-element{
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.fly-in{
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .text-form {
     display: flex;
     align-items: flex-start;
@@ -320,27 +331,28 @@ button {
     position: absolute;
     z-index: -1;
     left: 0;
+    bottom: 0;
 
     @media(max-width: 1320px) {
         width: 343.515px;
         height: 414.897px;
-        top: 5950px;
+        bottom: 0;
     }
 
     @media(max-width: 1200px) {
-        top: 8000px;
+        bottom: 0;
     }
 
     @media(max-width: 830px) {
-        top: 8200px;
+        bottom: 0;
     }
 
     @media(max-width: 605px) {
-        top: 6875px;
+        bottom: 0;
     }
 
     @media(max-width: 430px) {
-        top: 6775px;
+        bottom: 0;
     }
 }
 
@@ -429,6 +441,10 @@ span {
 
 .d-none {
     display: none !important;
+}
+
+.d-flex{
+    display: unset !important;
 }
 
 .shadow-german {

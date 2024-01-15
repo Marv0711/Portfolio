@@ -3,10 +3,21 @@
     background: var(--Style-1-Syle-1-a---green-purple-Blue-bg, #141D2F);
     height: 291px;
     width: 100%;
-
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
+}
+
+.fly-in-element{
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.fly-in{
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .logo {
@@ -14,11 +25,14 @@
     height: 40.142px;
 }
 
+.element-first{
+    margin-left: 120px;
+}
+
 .logos-text-container {
     display: flex;
-    width: 100%;
     justify-content: space-around;
-    align-items: center;
+    width: 100%;
 
     @media(max-width: 750px) {
         flex-direction: column;
@@ -53,6 +67,9 @@
 
 .impressum-container {
     display: flex;
+    justify-content: space-around;
+    display: flex;
+    width: 100%;
     justify-content: space-around;
 
     @media(max-width: 750px) {

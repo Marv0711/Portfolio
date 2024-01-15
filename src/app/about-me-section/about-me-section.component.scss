@@ -1,10 +1,21 @@
+.fly-in-element{
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.fly-in{
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .vector {
     background-image: url('/assets/img/vector.svg');
     width: 100%;
     background-size: cover;
     z-index: -1;
     position: absolute;
-    margin-top: -569px;
+    margin-top: -650px;
     height: 100%
 }
 
@@ -195,5 +206,5 @@
     display: flex;
     right: 0px;
     z-index: -1;
-    top: 830px;
+    top: 0px;
 }

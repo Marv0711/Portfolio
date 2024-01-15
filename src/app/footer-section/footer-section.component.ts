@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,5 +15,19 @@ export class FooterSectionComponent {
 
   backToLandingPage(){
     this.router.navigateByUrl('/policy');
+  }
+
+  scrolled = 0;
+
+  @HostListener('window:scroll', ['$event'])
+  
+  onWindowScroll() {
+    let numb = window.scrollY;
+    if (numb >= 2100){
+      this.scrolled = 1;
+    }
+    else {
+      this.scrolled = 0;
+    }
   }
 }

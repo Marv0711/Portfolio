@@ -12,6 +12,17 @@
     }
 }
 
+.fly-in-element{
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.fly-in{
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .allIcons-container {
     display: inline-flex;
     flex-direction: column;
@@ -118,7 +129,7 @@
     flex-shrink: 0;
     position: absolute;
     left: -63px;
-    top: 1800px;
+    top: 0px;
     display: flex;
     z-index: -1;
     filter: blur(5.5px);

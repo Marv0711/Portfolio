@@ -1,4 +1,5 @@
-import { Component, Injectable, Input } from '@angular/core';
+import { Component, HostListener, Injectable, Input } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -12,17 +13,23 @@ import { Component, Injectable, Input } from '@angular/core';
 
 export class MySkillsSectionComponent {
 
-  @Input() language:string = ''
+  scrolled:number = 0;
 
-  laGerman(){
-    console.log(this.language);
-  }
-  
-  laEnglish(){
-    document.getElementById('skillHeadline')?.classList.remove('mobile-german')
-  }
+  constructor(public translate: TranslateService){}
 
   toContact(){
     window.location.href = window.location.pathname + '#contact';
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  
+  onWindowScroll() {
+    let numb = window.scrollY;
+    if (numb >= 1200){
+      this.scrolled = 1;
+    }
+    else {
+      this.scrolled = 0;
+    }
   }
 }
