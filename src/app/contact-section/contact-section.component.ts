@@ -183,6 +183,7 @@ export class ContactSectionComponent {
     });
 
     document.getElementById('shadowEnglish')?.classList.add('shadow-german');
+    document.getElementById('shadowEnglish')?.classList.remove('shadow');
   }
 
   laEnglish(){
@@ -200,5 +201,6 @@ export class ContactSectionComponent {
     });
 
     document.getElementById('shadowEnglish')?.classList.remove('shadow-german');
+    document.getElementById('shadowEnglish')?.classList.add('shadow');
   }
 }

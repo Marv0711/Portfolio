@@ -12,10 +12,10 @@ import { Component, Injectable, Input } from '@angular/core';
 
 export class MySkillsSectionComponent {
 
-  @Input() german:boolean = false;
+  @Input() language:string = ''
 
   laGerman(){
-    document.getElementById('skillHeadline')?.classList.add('mobile-german')
+    console.log(this.language);
   }
   
   laEnglish(){

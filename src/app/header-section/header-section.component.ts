@@ -14,6 +14,7 @@ import { ContactSectionComponent } from '../contact-section/contact-section.comp
   templateUrl: './header-section.component.html',
   styleUrl: './header-section.component.scss'
 })
+
 export class HeaderSectionComponent {
   activeSection: string = '';
   activeSectionLanguage: string = '';
@@ -40,8 +41,9 @@ export class HeaderSectionComponent {
   }
 
   laGerman(){
+    this.skills.language = 'german';
     this.skills.laGerman();
-    this.contact.laGerman();
+    //this.contact.laGerman();
   }
 
   laEnglish(){
