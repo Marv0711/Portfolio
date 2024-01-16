@@ -25,13 +25,18 @@
     height: 40.142px;
 }
 
-.element-first{
+.first-element{
     margin-left: 120px;
+
+    @media(max-width: 1320px) {
+        margin-left: 10px;
+    }
 }
 
 .logos-text-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
 
     @media(max-width: 750px) {
@@ -56,6 +61,7 @@
     align-items: center;
     gap: 42px;
     flex-shrink: 0;
+    margin-right: 50px;
 
     a {
         &:hover {
@@ -63,14 +69,21 @@
             transition-duration: 250ms;
         }
     }
+
+    @media(max-width: 1320px) {
+        margin-right: 10px;
+    }
 }
 
 .impressum-container {
     display: flex;
-    justify-content: space-around;
-    display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-left: 120px;
+
+    @media(max-width: 1320px) {
+        margin-left: 10px;
+    }
 
     @media(max-width: 750px) {
         display: none;

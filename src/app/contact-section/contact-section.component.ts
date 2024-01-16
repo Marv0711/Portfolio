@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, Injectable, ViewChild } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
@@ -23,66 +23,64 @@ export class ContactSectionComponent {
 
   isButtonDisabled = true;
   isCheckboxDisabled = false;
+  inputfieldsDisabled = false;
 
-  constructor(public translate: TranslateService, private router: Router, ) {}
+  constructor(public translate: TranslateService, private router: Router,) { }
 
-  @ViewChild('myFormEnglish') myFormEnglish!: ElementRef;
-  @ViewChild('myFormGerman') myFormGerman!:ElementRef
+  @ViewChild('myForm') myForm!: ElementRef;
 
-  @ViewChild('namefieldEnglish') namefieldEnglish!: ElementRef;
-  @ViewChild('namefieldGerman') namefieldGerman!:ElementRef
+  @ViewChild('namefield') namefield!: ElementRef;
 
-  @ViewChild('mailfieldEnglish') mailfieldEnglish!: ElementRef;
-  @ViewChild('mailfieldGerman') mailfieldGerman!:ElementRef
+  @ViewChild('mailfield') mailfield!: ElementRef;
 
-  @ViewChild('messagefieldEnglish') messagefieldEnglish!: ElementRef;
-  @ViewChild('messagefieldGerman') messagefieldGerman!:ElementRef
+  @ViewChild('messagefield') messagefield!: ElementRef;
 
-  @ViewChild('buttonEnglish') buttonEnglish!: ElementRef;
-  @ViewChild('buttonGerman') buttonGerman!:ElementRef
+  @ViewChild('button') button!: ElementRef;
+
 
 
   async sendMessage() {
-  // action = url
+    // action = url
+    this.setFieldState(this.namefield, true);
+    this.setFieldState(this.mailfield, true);
+    this.setFieldState(this.messagefield, true);
+    this.setFieldState(this.button, true);
+    this.isButtonDisabled = true;
+    this.isCheckboxDisabled = true;
+    this.inputfieldsDisabled = true;
 
-  let isGerman = this.translate.currentLang === 'de';
-  console.log(isGerman ? this.myFormGerman : this.myFormEnglish);
-  
-  if(isGerman){
-    this.setFieldState(this.namefieldGerman);
-    this.setFieldState(this.mailfieldGerman);
-    this.setFieldState(this.messagefieldGerman);
-    this.setFieldState(this.buttonGerman);
-  }
-  else{
-    this.setFieldState(this.namefieldEnglish);
-    this.setFieldState(this.mailfieldEnglish);
-    this.setFieldState(this.messagefieldEnglish);
-    this.setFieldState(this.buttonEnglish);
-  }
+    let namefield = this.namefield.nativeElement;
+    let mailfield = this.mailfield.nativeElement;
+    let messagefield = this.messagefield.nativeElement;
 
-  this.isButtonDisabled = true;
-  this.isCheckboxDisabled = true;
 
     let fd = new FormData()
-    fd.append('name', '')
-    fd.append('email', '')
-    fd.append('message', '')
+    fd.append('name', namefield.value);
+    fd.append('email', mailfield.value);
+    fd.append('message', messagefield.value);
     await fetch('url',
       {
         method: 'POST',
         body: fd
       }
     )
+
+    this.setFieldState(this.namefield, false);
+    this.setFieldState(this.mailfield, false);
+    this.setFieldState(this.messagefield, false);
+    this.setFieldState(this.button, false);
+    this.isButtonDisabled = false;
+    this.isCheckboxDisabled = false;
+    this.inputfieldsDisabled = false;
   }
 
-  setFieldState(field: ElementRef): void {
+  setFieldState(field: ElementRef, status:boolean) {
     if (field) {
-      field.nativeElement.disabled = true;
+      field.nativeElement.disabled = status;
     }
   }
 
-  toPolicy(){
+  toPolicy() {
     this.router.navigateByUrl('/policy');
   }
 
@@ -156,10 +154,9 @@ export class ContactSectionComponent {
   }
 
   checkBoxCklick() {
-    if(!this.isCheckboxDisabled)
-    {
+    if (!this.isCheckboxDisabled) {
       this.BoxFirstClick = true;
-    
+
       if (this.checkboxClicked) {
         this.checkboxClicked = false;
       }
@@ -168,7 +165,7 @@ export class ContactSectionComponent {
       }
       this.buttonActiv();
     }
-    else{
+    else {
 
     }
   }
@@ -191,7 +188,7 @@ export class ContactSectionComponent {
     });
   }
 
-  laGerman(){
+  laGerman() {
     let englishInputs = document.querySelectorAll('.input-english');
     englishInputs.forEach(element => {
       element.classList.add('d-none')
@@ -204,7 +201,7 @@ export class ContactSectionComponent {
 
   }
 
-  laEnglish(){
+  laEnglish() {
     let englishInputs = document.querySelectorAll('.input-english');
     englishInputs.forEach(element => {
       element.classList.remove('d-none')
@@ -219,11 +216,11 @@ export class ContactSectionComponent {
   scrolled = 0;
 
   @HostListener('window:scroll', ['$event'])
-  
+
   onWindowScroll() {
     let numb = window.scrollY;
-    
-    if (numb >= 4100){
+
+    if (numb >= 4100) {
       this.scrolled = 1;
     }
     else {

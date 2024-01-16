@@ -13,11 +13,11 @@
             </div>
         </div>
         <div class="contact-form">
-            <form #myFormEnglish [ngClass]="{'d-none': translate.currentLang === 'de'}">
+            <form #myForm [ngClass]="{'d-none': translate.currentLang === 'de'}">
                 <div>
-                    <div [ngClass]="{ 'falseInput': showIconName && nameFirstClick, 'rightInput': !showIconName && nameFirstClick}"
+                    <div [ngClass]="{ 'falseInput': showIconName && nameFirstClick, 'rightInput': !showIconName && nameFirstClick, 'disable-design-input': inputfieldsDisabled}"
                         class="input-container">
-                        <input #namefieldEnglish (focus)="checkInput($event, 'showIconName')" (input)="checkInput($event, 'showIconName')"
+                        <input #namefield (focus)="checkInput($event, 'showIconName')" (input)="checkInput($event, 'showIconName')"
                             type="text" name="name" placeholder="Your name" required>
                         <img *ngIf="showIconName && nameFirstClick" src="assets/img/error.svg" alt="">
                         <img *ngIf="!showIconName && nameFirstClick" src="assets/img/ok.svg" alt="">
@@ -25,9 +25,9 @@
                     <span translate *ngIf="showIconName && nameFirstClick">Your name is required</span>
                 </div>
                 <div>
-                    <div [ngClass]="{ 'falseInput': showIconEmail && EmailFirstClick, 'rightInput': !showIconEmail && EmailFirstClick}"
+                    <div [ngClass]="{ 'falseInput': showIconEmail && EmailFirstClick, 'rightInput': !showIconEmail && EmailFirstClick, 'disable-design-input': inputfieldsDisabled}"
                         class="input-container">
-                        <input #mailfieldEnglish (focus)="checkInput($event, 'showIconEmail')"
+                        <input #mailfield (focus)="checkInput($event, 'showIconEmail')"
                             (input)="checkInput($event, 'showIconEmail')" required type="email" name="email"
                             placeholder="Your email">
                         <img *ngIf="showIconEmail && EmailFirstClick" src="assets/img/error.svg" alt="">
@@ -36,9 +36,9 @@
                     <span translate *ngIf="showIconEmail && EmailFirstClick">Your email is required</span>
                 </div>
                 <div>
-                    <div [ngClass]="{ 'falseInput': showIconMessage && MessageFirstClick, 'rightInput': !showIconMessage && MessageFirstClick}"
+                    <div [ngClass]="{ 'falseInput': showIconMessage && MessageFirstClick, 'rightInput': !showIconMessage && MessageFirstClick, 'disable-design-input': inputfieldsDisabled}"
                         class="textarea-container">
-                        <textarea #messagefieldEnglish (focus)="checkInput($event, 'showIconMessage')"
+                        <textarea #messagefield (focus)="checkInput($event, 'showIconMessage')"
                             (input)="checkInput($event, 'showIconMessage')" required type="text" name="message"
                             placeholder="Your message"></textarea>
                         <img *ngIf="showIconMessage && MessageFirstClick" src="assets/img/error.svg" alt="">
@@ -50,9 +50,9 @@
                 <div class="box-button-container">
                     <div class="text-warning-container">
                         <div class="box-text-container">
-                            <img #checkboxEnglish (click)="checkBoxCklick()" class="box-img" *ngIf="!checkboxClicked"
+                            <img (click)="checkBoxCklick()" class="box-img" *ngIf="!checkboxClicked"
                                 src="assets/img/box.svg" alt="">
-                            <img #checkboxEnglish (click)="checkBoxCklick()" class="box-img" *ngIf="checkboxClicked"
+                            <img (click)="checkBoxCklick()" class="box-img" *ngIf="checkboxClicked"
                                 src="assets/img/boxclicked.svg" alt="">
                             <div class="text-container">
                                 <p [ngClass]="{ 'd-none': translate.currentLang == 'de'}" class="normal-text">I've read
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div>
-                        <button #buttonEnglish translate
+                        <button #button translate
                             [ngClass]="{ 'disable-design': isButtonDisabled || showIconName || showIconEmail || showIconMessage }"
                             (click)="sendMessage()" [disabled]="isButtonDisabled"><span class="button-text" translate>Send message
                             </span>
@@ -81,11 +81,11 @@
                 </div>
             </form>
             <div [ngClass]="{'d-flex': translate.currentLang === 'de'}" class="contact-form d-none">
-                <form #myFormGerman>
+                <form #myForm>
                     <div>
-                        <div [ngClass]="{ 'falseInput': showIconName && nameFirstClick, 'rightInput': !showIconName && nameFirstClick}"
+                        <div [ngClass]="{ 'falseInput': showIconName && nameFirstClick, 'rightInput': !showIconName && nameFirstClick, 'disable-design-input': inputfieldsDisabled}"
                             class="input-container">
-                            <input #namefieldGerman (focus)="checkInput($event, 'showIconName')"
+                            <input #namefield (focus)="checkInput($event, 'showIconName')"
                                 (input)="checkInput($event, 'showIconName')" type="text" name="name"
                                 placeholder="Ihr Name" required>
                             <img *ngIf="showIconName && nameFirstClick" src="assets/img/error.svg" alt="">
@@ -94,9 +94,9 @@
                         <span translate *ngIf="showIconName && nameFirstClick">Ihr Name ist wichtig</span>
                     </div>
                     <div>
-                        <div [ngClass]="{ 'falseInput': showIconEmail && EmailFirstClick, 'rightInput': !showIconEmail && EmailFirstClick}"
+                        <div [ngClass]="{ 'falseInput': showIconEmail && EmailFirstClick, 'rightInput': !showIconEmail && EmailFirstClick, 'disable-design-input': inputfieldsDisabled}"
                             class="input-container">
-                            <input #mailfieldGerman (focus)="checkInput($event, 'showIconEmail')"
+                            <input #mailfield (focus)="checkInput($event, 'showIconEmail')"
                                 (input)="checkInput($event, 'showIconEmail')" required type="email" name="email"
                                 placeholder="Ihre E-Mail">
                             <img *ngIf="showIconEmail && EmailFirstClick" src="assets/img/error.svg" alt="">
@@ -105,9 +105,9 @@
                         <span translate *ngIf="showIconEmail && EmailFirstClick">Ihr E-Mail ist wichtig</span>
                     </div>
                     <div>
-                        <div [ngClass]="{ 'falseInput': showIconMessage && MessageFirstClick, 'rightInput': !showIconMessage && MessageFirstClick}"
+                        <div [ngClass]="{ 'falseInput': showIconMessage && MessageFirstClick, 'rightInput': !showIconMessage && MessageFirstClick, 'disable-design-input': inputfieldsDisabled}"
                             class="textarea-container">
-                            <textarea #messagefieldGerman (focus)="checkInput($event, 'showIconMessage')"
+                            <textarea #messagefield (focus)="checkInput($event, 'showIconMessage')"
                                 (input)="checkInput($event, 'showIconMessage')" required type="text" name="message"
                                 placeholder="Ihre Nachricht"></textarea>
                             <img *ngIf="showIconMessage && MessageFirstClick" src="assets/img/error.svg" alt="">
@@ -119,9 +119,9 @@
                     <div class="box-button-container">
                         <div class="text-warning-container">
                             <div class="box-text-container">
-                                <img #checkboxGerman (click)="checkBoxCklick(); buttonActiv()" class="box-img" *ngIf="!checkboxClicked"
+                                <img (click)="checkBoxCklick(); buttonActiv()" class="box-img" *ngIf="!checkboxClicked"
                                     src="assets/img/box.svg" alt="">
-                                <img #checkboxGerman (click)="checkBoxCklick(); buttonActiv()" class="box-img" *ngIf="checkboxClicked"
+                                <img (click)="checkBoxCklick(); buttonActiv()" class="box-img" *ngIf="checkboxClicked"
                                     src="assets/img/boxclicked.svg" alt="">
                                 <div class="text-container">
                                     <p [ngClass]="{ 'd-none': translate.currentLang == 'de'}" class="normal-text">I've
@@ -142,7 +142,7 @@
                             </div>
                         </div>
                         <div>
-                            <button #buttonGerman (click)="sendMessage()" translate
+                            <button #button (click)="sendMessage()" translate
                                 [ngClass]="{ 'disable-design': isButtonDisabled || showIconName || showIconEmail || showIconMessage }"
                                 type="submit" [disabled]="isButtonDisabled"><span class="button-text" translate>Send
                                     message </span>
