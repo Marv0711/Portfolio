@@ -25,6 +25,8 @@ export class ContactSectionComponent {
   isCheckboxDisabled = false;
   inputfieldsDisabled = false;
 
+  messageSend = false;
+
   constructor(public translate: TranslateService, private router: Router,) { }
 
   @ViewChild('myForm') myForm!: ElementRef;
@@ -40,19 +42,29 @@ export class ContactSectionComponent {
 
 
   async sendMessage() {
-    // action = url
-    this.setFieldState(this.namefield, true);
-    this.setFieldState(this.mailfield, true);
-    this.setFieldState(this.messagefield, true);
-    this.setFieldState(this.button, true);
-    this.isButtonDisabled = true;
-    this.isCheckboxDisabled = true;
-    this.inputfieldsDisabled = true;
+    this.setFieldDisabeldTrue();
 
+    await this.mailSending();
+
+    this.setFieldDisabeldFalse()
+
+    this.messageSend = true;
+  }
+
+  setFieldDisabeldFalse(){
+    this.setFieldState(this.namefield, false);
+    this.setFieldState(this.mailfield, false);
+    this.setFieldState(this.messagefield, false);
+    this.setFieldState(this.button, false);
+    this.isButtonDisabled = false;
+    this.isCheckboxDisabled = false;
+    this.inputfieldsDisabled = false;
+  }
+
+  async mailSending(){
     let namefield = this.namefield.nativeElement;
     let mailfield = this.mailfield.nativeElement;
     let messagefield = this.messagefield.nativeElement;
-
 
     let fd = new FormData()
     fd.append('name', namefield.value);
@@ -64,14 +76,23 @@ export class ContactSectionComponent {
         body: fd
       }
     )
+    this.clearInputs(namefield, mailfield, messagefield)
+  }
 
-    this.setFieldState(this.namefield, false);
-    this.setFieldState(this.mailfield, false);
-    this.setFieldState(this.messagefield, false);
-    this.setFieldState(this.button, false);
-    this.isButtonDisabled = false;
-    this.isCheckboxDisabled = false;
-    this.inputfieldsDisabled = false;
+  clearInputs(namefield:any, mailfield:any, messagefield:any){
+    namefield.value = "";
+    mailfield.value = "";
+    messagefield.value = "";
+  }
+
+  setFieldDisabeldTrue(){
+    this.setFieldState(this.namefield, true);
+    this.setFieldState(this.mailfield, true);
+    this.setFieldState(this.messagefield, true);
+    this.setFieldState(this.button, true);
+    this.isButtonDisabled = true;
+    this.isCheckboxDisabled = true;
+    this.inputfieldsDisabled = true;
   }
 
   setFieldState(field: ElementRef, status:boolean) {
@@ -81,12 +102,13 @@ export class ContactSectionComponent {
   }
 
   toPolicy() {
-    this.router.navigateByUrl('/policy');
+    window.open('/policy', '_blank');
   }
 
 
   buttonActiv() {
     this.isButtonDisabled = !this.isButtonDisabled
+    this.messageSend = false;
   }
 
 
@@ -129,6 +151,7 @@ export class ContactSectionComponent {
       this.showIconMessage = isInputEmpty;
       this.MessageFirstClick = true;
     }
+    this.messageSend = false;
   }
 
   editNameInput(isInputEmpty: boolean) {
@@ -140,6 +163,7 @@ export class ContactSectionComponent {
       this.showIconName = isInputEmpty;
       this.nameFirstClick = true;
     }
+    this.messageSend = false;
   }
 
   editMailInput(activInputfield: HTMLInputElement) {
@@ -151,6 +175,7 @@ export class ContactSectionComponent {
       this.showIconEmail = true;
       this.EmailFirstClick = true;
     }
+    this.messageSend = false;
   }
 
   checkBoxCklick() {
@@ -218,12 +243,14 @@ export class ContactSectionComponent {
   @HostListener('window:scroll', ['$event'])
 
   onWindowScroll() {
-    let numb = window.scrollY;
-
-    if (numb >= 4100) {
+    let currentScroll = window.scrollY;
+    let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    let scrollPercentage = (currentScroll / totalHeight) * 100;
+    let thresholdPercentage = 80;
+  
+    if (scrollPercentage >= thresholdPercentage) {
       this.scrolled = 1;
-    }
-    else {
+    } else {
       this.scrolled = 0;
     }
   }

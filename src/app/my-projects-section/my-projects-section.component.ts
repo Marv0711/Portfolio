@@ -15,11 +15,14 @@ export class MyProjectsSectionComponent {
   @HostListener('window:scroll', ['$event'])
   
   onWindowScroll() {
-    let numb = window.scrollY;
-    if (numb >= 2100){
+    let currentScroll = window.scrollY;
+    let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    let scrollPercentage = (currentScroll / totalHeight) * 100;
+    let thresholdPercentage = 35;
+  
+    if (scrollPercentage >= thresholdPercentage) {
       this.scrolled = 1;
-    }
-    else {
+    } else {
       this.scrolled = 0;
     }
   }

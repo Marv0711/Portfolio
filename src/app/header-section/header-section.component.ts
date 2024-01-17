@@ -18,6 +18,7 @@ import { ContactSectionComponent } from '../contact-section/contact-section.comp
 export class HeaderSectionComponent {
   activeSection: string = '';
   activeSectionLanguage: string = '';
+  menuOpen = false;
 
   constructor(public translate: TranslateService, private contact: ContactSectionComponent) {
     
@@ -38,6 +39,7 @@ export class HeaderSectionComponent {
   openMenu(){
     let menu = document.getElementById('menu');
     menu?.classList.toggle('open');
+    this.menuOpen = !this.menuOpen;
   }
 
   laGerman(){

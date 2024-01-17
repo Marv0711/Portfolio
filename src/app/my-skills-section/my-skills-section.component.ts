@@ -24,11 +24,14 @@ export class MySkillsSectionComponent {
   @HostListener('window:scroll', ['$event'])
   
   onWindowScroll() {
-    let numb = window.scrollY;
-    if (numb >= 1200){
+    let currentScroll = window.scrollY;
+    let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    let scrollPercentage = (currentScroll / totalHeight) * 100;
+    let thresholdPercentage = 19;
+  
+    if (scrollPercentage >= thresholdPercentage) {
       this.scrolled = 1;
-    }
-    else {
+    } else {
       this.scrolled = 0;
     }
   }

@@ -1,32 +1,46 @@
-<div>
-    <a (click)="up()"><img class="logo" src="/assets/img/logo.png" alt=""></a>
-</div>
-<div class="navBar-container">
-    <a [ngClass]="{ 'activ-button': activeSection == 'aboutMe' }" (click)="activButton('aboutMe')" href="#aboutMe">About me</a>
-    <a [ngClass]="{ 'activ-button': activeSection == 'skills' }" (click)="activButton('skills')" href="#skills">Skills</a>
-    <a [ngClass]="{ 'activ-button': activeSection == 'portfolio' }" (click)="activButton('portfolio')" href="#portfolio">Portfolio</a>
-    <a [ngClass]="{ 'activ-button': activeSection == 'contact' }" (click)="activButton('contact')" href="#contact">Contact</a>
-    <div class="la-container">
-        <a [ngClass]="{ 'activ-button': activeSectionLanguage == 'english' }" (click)="activButtonLanguage('english')" class="langue" (click)="translate.use('de'); laGerman()">DE</a>
-        <div style="border-bottom: 23px solid white; height: 2px; width: 2px;"></div>
-        <a [ngClass]="{ 'activ-button': activeSectionLanguage == 'german' }" (click)="activButtonLanguage('german')" class="langue" (click)="translate.use('en'); laEnglish()">EN</a>
+<div class="complete-header">
+    <div>
+        <img class="logo" src="/assets/img/logo.png" alt="">
     </div>
-</div>
-<input type="checkbox" id="checkbox4" class="checkbox4 visuallyHidden">
-<label for="checkbox4">
-    <div (click)="openMenu()" class="hamburger hamburger4">
-        <span class="bar bar1"></span>
-        <span class="bar bar2"></span>
-        <span class="bar bar3"></span>
-        <span class="bar bar4"></span>
-        <span class="bar bar5"></span>
+    <div class="navBar-container">
+        <a [ngClass]="{ 'activ-button': activeSection == 'aboutMe' }" (click)="activButton('aboutMe')"
+            href="#aboutMe">About me</a>
+        <a [ngClass]="{ 'activ-button': activeSection == 'skills' }" (click)="activButton('skills')"
+            href="#skills">Skills</a>
+        <a [ngClass]="{ 'activ-button': activeSection == 'portfolio' }" (click)="activButton('portfolio')"
+            href="#portfolio">Portfolio</a>
+        <a [ngClass]="{ 'activ-button': activeSection == 'contact' }" (click)="activButton('contact')"
+            href="#contact">Contact</a>
+        <div class="la-container">
+            <a [ngClass]="{ 'activ-button': activeSectionLanguage == 'english' }"
+                (click)="activButtonLanguage('english')" class="langue" (click)="translate.use('de'); laGerman()">DE</a>
+            <div style="border-bottom: 23px solid white; height: 2px; width: 2px;"></div>
+            <a [ngClass]="{ 'activ-button': activeSectionLanguage == 'german' }" (click)="activButtonLanguage('german')"
+                class="langue" (click)="translate.use('en'); laEnglish()">EN</a>
+        </div>
     </div>
-</label>
-<div id="menu">
-    <a [ngClass]="{ 'activ-button': activeSection == 'aboutMe' }" (click)="activButton('aboutMe')" href="#aboutMe">About me</a>
-    <a [ngClass]="{ 'activ-button': activeSection == 'skills' }" (click)="activButton('skills')" href="#skills">Skills</a>
-    <a [ngClass]="{ 'activ-button': activeSection == 'portfolio' }" (click)="activButton('portfolio')" href="#portfolio">Portfolio</a>
-    <a [ngClass]="{ 'activ-button': activeSection == 'contact' }" (click)="activButton('contact')" href="#contact">Contact</a>
-        <a [ngClass]="{ 'activ-button': activeSectionLanguage == 'english' }" (click)="activButtonLanguage('english')" class="langue" (click)="translate.use('de'); laGerman()">DE</a>
-        <a [ngClass]="{ 'activ-button': activeSectionLanguage == 'german' }" (click)="activButtonLanguage('german')" class="langue" (click)="translate.use('en'); laEnglish()">EN</a>
+    <input type="checkbox" id="checkbox4" class="checkbox4 visuallyHidden">
+    <label for="checkbox4">
+        <div (click)="openMenu()" class="hamburger hamburger4">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+            <span class="bar bar4"></span>
+            <span class="bar bar5"></span>
+        </div>
+    </label>
+    <div id="menu">
+        <a [ngClass]="{ 'activ-button': activeSection == 'aboutMe' }" (click)="activButton('aboutMe')"
+            href="#aboutMe">About me</a>
+        <a [ngClass]="{ 'activ-button': activeSection == 'skills' }" (click)="activButton('skills')"
+            href="#skills">Skills</a>
+        <a [ngClass]="{ 'activ-button': activeSection == 'portfolio' }" (click)="activButton('portfolio')"
+            href="#portfolio">Portfolio</a>
+        <a [ngClass]="{ 'activ-button': activeSection == 'contact' }" (click)="activButton('contact')"
+            href="#contact">Contact</a>
+        <a [ngClass]="{ 'activ-button': activeSectionLanguage == 'english' }" (click)="activButtonLanguage('english')"
+            class="langue" (click)="translate.use('de'); laGerman()">DE</a>
+        <a [ngClass]="{ 'activ-button': activeSectionLanguage == 'german' }" (click)="activButtonLanguage('german')"
+            class="langue" (click)="translate.use('en'); laEnglish()">EN</a>
+    </div>
 </div>

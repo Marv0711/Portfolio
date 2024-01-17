@@ -7,7 +7,7 @@
 
 .fly-in-element{
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(-100px);
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 

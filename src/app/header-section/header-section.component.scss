@@ -1,10 +1,25 @@
+.complete-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 37px 120px;
+    margin-bottom: 50px;
+    background-color: #141D2F;
+
+    @media(max-width:1050px) {
+        position: sticky;
+        z-index: 99;
+        top: 0;
+    }
+
+    @media(max-width: 620px) {
+        padding: 37px 10px;
+    }
+}
+
 .logo {
     width: 175px;
     object-fit: cover;
-
-    &:hover{
-        cursor: pointer;
-    }
 }
 
 a {

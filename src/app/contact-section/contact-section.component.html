@@ -60,7 +60,7 @@
                                         policy</a>&nbsp;and agree to the processing of my
                                     data as outlined.</p>
                                 <p [ngClass]="{ 'd-flex': translate.currentLang == 'de'}" class="normal-text d-none">Ich
-                                    habe die&nbsp;<a translate target="_blank"
+                                    habe die&nbsp;<a class="link" translate target="_blank"
                                         (click)="toPolicy()">Datenschutzbestimmungen</a>&nbsp; gelesen
                                     und erkläre mich mit der Verarbeitung meiner Daten wie beschrieben einverstanden.
                                 </p>
@@ -71,12 +71,13 @@
                                 policy.</span>
                         </div>
                     </div>
-                    <div>
+                    <div class="button-mailText">
                         <button #button translate
                             [ngClass]="{ 'disable-design': isButtonDisabled || showIconName || showIconEmail || showIconMessage }"
                             (click)="sendMessage()" [disabled]="isButtonDisabled"><span class="button-text" translate>Send message
                             </span>
                             :&#41;</button>
+                            <div><span *ngIf="messageSend" class="message-send">Your message has been sent!</span></div>
                     </div>
                 </div>
             </form>
@@ -141,12 +142,13 @@
                                     policy.</span>
                             </div>
                         </div>
-                        <div>
+                        <div class="button-mailText">
                             <button #button (click)="sendMessage()" translate
                                 [ngClass]="{ 'disable-design': isButtonDisabled || showIconName || showIconEmail || showIconMessage }"
                                 type="submit" [disabled]="isButtonDisabled"><span class="button-text" translate>Send
                                     message </span>
                                 :&#41;</button>
+                                <div><span *ngIf="messageSend" class="message-send">Ihre Nachricht wurde gesendet!</span></div>
                         </div>
                     </div>
                 </form>
