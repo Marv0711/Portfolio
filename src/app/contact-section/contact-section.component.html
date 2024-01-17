@@ -119,9 +119,9 @@
                     <div class="box-button-container">
                         <div class="text-warning-container">
                             <div class="box-text-container">
-                                <img (click)="checkBoxCklick(); buttonActiv()" class="box-img" *ngIf="!checkboxClicked"
+                                <img (click)="checkBoxCklick()" class="box-img" *ngIf="!checkboxClicked"
                                     src="assets/img/box.svg" alt="">
-                                <img (click)="checkBoxCklick(); buttonActiv()" class="box-img" *ngIf="checkboxClicked"
+                                <img (click)="checkBoxCklick()" class="box-img" *ngIf="checkboxClicked"
                                     src="assets/img/boxclicked.svg" alt="">
                                 <div class="text-container">
                                     <p [ngClass]="{ 'd-none': translate.currentLang == 'de'}" class="normal-text">I've

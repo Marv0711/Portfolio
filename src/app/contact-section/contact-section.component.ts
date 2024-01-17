@@ -58,7 +58,7 @@ export class ContactSectionComponent {
     fd.append('name', namefield.value);
     fd.append('email', mailfield.value);
     fd.append('message', messagefield.value);
-    await fetch('url',
+    await fetch('https://marvin-buchan.de/assets/php/send_mail.php',
       {
         method: 'POST',
         body: fd
