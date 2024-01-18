@@ -14,6 +14,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class MySkillsSectionComponent {
 
   scrolled:number = 0;
+  isBigScreen: boolean = window.innerWidth >= 1920;
+
 
   constructor(public translate: TranslateService){}
 

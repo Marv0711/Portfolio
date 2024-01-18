@@ -20,6 +20,14 @@
     margin-top: 150px;
 }
 
+.elipse-line{
+    display: flex;
+    flex-grow: 1;
+    border: 2px solid #70E61C;
+    min-width: 200px;
+    max-width: none;
+}
+
 .about-me-container {
     padding-left: 102px;
     display: inline-flex;
@@ -131,4 +139,12 @@
     right: 0px;
     z-index: -1;
     top: 0px;
+}
+
+.max-width-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1920px;
 }

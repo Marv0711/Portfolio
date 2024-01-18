@@ -2,6 +2,7 @@
     padding-left: 85px;
     margin-top: 150px;
     display: flex;
+    max-width: 1920px;
 
     @media(max-width: 1430px) {
         flex-direction: column-reverse;
@@ -189,6 +190,10 @@
         width: 58px;
         flex-shrink: 0;
     }
+}
+
+.d-none{
+    display: none !important;
 }
 
 .skill-description {

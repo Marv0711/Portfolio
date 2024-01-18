@@ -1,25 +1,27 @@
 <div [ngClass]="{ 'fly-in': scrolled == 1 }" class="fly-in-element">
     <div class="about-me-text-img">
-        <div class="about-me-container">
-            <div id="aboutMe" class="about-me-headline">
-                <span class="headline">{{ 'About me' | translate }}</span>
+        <div class="max-width-container">
+            <div class="about-me-container">
+                <div id="aboutMe" class="about-me-headline">
+                    <span class="headline">{{ 'About me' | translate }}</span>
+                </div>
+                <div class="about-me-description">
+                    <span translate>INTRO</span>
+                </div>
+                <div class="personal-info-container">
+                    <div class="personal-info-img"><img src="assets/img/blub-img.svg" alt=""></div>
+                    <div class="personal-info-text"><span translate>FACT_1</span></div>
+                </div>
+                <div class="personal-info-container">
+                    <div class="personal-info-img"><img src="assets/img/puzzel.svg" alt=""></div>
+                    <div class="personal-info-text"><span translate>FACT_2</span></div>
+                </div>
             </div>
-            <div class="about-me-description">
-                <span translate>INTRO</span>
-            </div>
-            <div class="personal-info-container">
-                <div class="personal-info-img"><img src="assets/img/blub-img.svg" alt=""></div>
-                <div class="personal-info-text"><span translate>FACT_1</span></div>
-            </div>
-            <div class="personal-info-container">
-                <div class="personal-info-img"><img src="assets/img/puzzel.svg" alt=""></div>
-                <div class="personal-info-text"><span translate>FACT_2</span></div>
+            <div class="about-me-picture">
+                <div class="elipse-img"></div>
             </div>
         </div>
-        <div class="about-me-picture">
-            <div class="elipse-img"></div>
-            <img src="assets/img/aboutMe-line.svg" alt="">
-        </div>
+        <div class="elipse-line"></div>
         <img class="aboutMe-purple-shadow" src="assets/img/aboutMe-purple-shadow.svg" alt="">
     </div>
 </div>

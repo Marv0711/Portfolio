@@ -226,6 +226,7 @@ button {
     justify-content: space-between;
     position: relative;
     z-index: 2;
+    max-width: 1920px;
 
     a {
         &:hover {

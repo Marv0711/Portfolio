@@ -112,14 +112,14 @@
         <div class="text-container">
             <div id="skillHeadline" class="skill-headline">
                 <div [ngClass]="{'mobile-german': translate.currentLang === 'de'}" translate>My skills</div>
-                <div class="vector-container"><img src="assets/img/vector-skills.svg" alt=""></div>
+                <div [ngClass]="{'d-none': isBigScreen == true}" class="vector-container"><img src="assets/img/vector-skills.svg" alt=""></div>
                 <div><img class="shadow-img" src="assets/img/skill-shadow-green.svg" alt=""></div>
             </div>
-            <div translate class="skill-description">I've acquired expertise in developing projects utilizing diverse frontend technologies and concepts.</div>
+            <div translate class="skill-description">I've acquired expertise in developing projects utilizing
+                diverse frontend technologies and concepts.</div>
         </div>
         <div class="button-container button-container-normal">
             <button translate (click)="toContact()">Get in touch</button>
         </div>
     </div>
 </div>
-
