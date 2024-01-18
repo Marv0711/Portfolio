@@ -56,12 +56,12 @@
                                 src="assets/img/boxclicked.svg" alt="">
                             <div class="text-container">
                                 <p [ngClass]="{ 'd-none': translate.currentLang == 'de'}" class="normal-text">I've read
-                                    the&nbsp;<a translate target="_blank" (click)="toPolicy()">privacy
+                                    the&nbsp;<a translate  routerLink="/policy">privacy
                                         policy</a>&nbsp;and agree to the processing of my
                                     data as outlined.</p>
                                 <p [ngClass]="{ 'd-flex': translate.currentLang == 'de'}" class="normal-text d-none">Ich
                                     habe die&nbsp;<a class="link" translate target="_blank"
-                                        (click)="toPolicy()">Datenschutzbestimmungen</a>&nbsp; gelesen
+                                    routerLink="/policy">Datenschutzbestimmungen</a>&nbsp; gelesen
                                     und erkläre mich mit der Verarbeitung meiner Daten wie beschrieben einverstanden.
                                 </p>
                             </div>
@@ -126,12 +126,12 @@
                                     src="assets/img/boxclicked.svg" alt="">
                                 <div class="text-container">
                                     <p [ngClass]="{ 'd-none': translate.currentLang == 'de'}" class="normal-text">I've
-                                        read the&nbsp;<a translate target="_blank" (click)="toPolicy()">privacy
+                                        read the&nbsp;<a translate target="_blank"  routerLink="/policy">privacy
                                             policy</a>&nbsp;and agree to the processing of my
                                         data as outlined.</p>
                                     <p [ngClass]="{ 'd-flex': translate.currentLang == 'de'}"
                                         class="normal-text d-none">Ich habe die&nbsp;<a translate target="_blank"
-                                            (click)="toPolicy()">Datenschutzbestimmungen</a>&nbsp; gelesen
+                                        routerLink="/policy">Datenschutzbestimmungen</a>&nbsp; gelesen
                                         und erkläre mich mit der Verarbeitung meiner Daten wie beschrieben
                                         einverstanden.
                                     </p>

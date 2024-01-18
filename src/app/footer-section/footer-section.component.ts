@@ -26,8 +26,4 @@ export class FooterSectionComponent {
       this.scrolled = 0;
     }
   }
-
-  toImpressum(){
-      window.open('/impressum', '_blank');
-  }
 }

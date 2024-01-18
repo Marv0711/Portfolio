@@ -7,6 +7,12 @@
     }
 }
 
+.hero-vector-container{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
 .img-container {
     @media(max-width: 680px) {
         background-image: url('/assets/img/photo-shadows.png');
@@ -37,38 +43,16 @@
     }
 }
 
+.hero-img, .vector {
+    height: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
 .hero-img {
     width: 500px;
     height: 705px;
-    position: absolute;
-    z-index: 1;
-    left: 0px;
-    top: 0px;
-
-    @media(max-width: 1500px) {
-        left: 30%;
-        top: 0px;
-        height: 716px;
-        width: 480px;
-    }
-
-    @media(max-width: 935px) {
-        left: 20%;
-    }
-
-    @media(max-width: 746px) {
-        left: 11%;
-    }
-
-    @media(max-width: 620px) {
-        left: 0%;
-    }
-
-    @media(max-width: 450px) {
-        top: 115px;
-        height: 449px;
-        width: 300px;
-    }
+    background: url('/assets/img/hero-character-photo.png');
 }
 
 .button-text-container {
@@ -197,24 +181,7 @@ button {
 
 .vector {
     background-image: url('/assets/img/vector.svg');
-    width: 100%;
-    background-size: cover;
-    z-index: 1;
-    position: absolute;
-    height: 100%;
-    margin-top: -574px;
-
-    @media only screen and (min-width: 1670px) {
-        margin-top: -650px;
-    }
-
-    @media(max-width:450px) {
-        margin-top: -577px;
-    }
-
-    @media(max-width:367px) {
-        margin-top: -665px;
-    }
+    background-position: center bottom; /* Align the background to the bottom center */
 }
 
 .socialMedia-scrollDown-continer {

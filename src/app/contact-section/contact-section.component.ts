@@ -101,10 +101,6 @@ export class ContactSectionComponent {
     }
   }
 
-  toPolicy() {
-    window.open('/policy', '_blank');
-  }
-
 
   buttonActiv() {
     this.isButtonDisabled = !this.isButtonDisabled
