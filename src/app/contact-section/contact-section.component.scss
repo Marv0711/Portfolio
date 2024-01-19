@@ -336,29 +336,14 @@ button {
 
 .shadow {
     position: absolute;
+    height: 1000px;
     z-index: -1;
     left: 0;
-    bottom: 0;
+    z-index: -1;
 
     @media(max-width: 1320px) {
         width: 343.515px;
         height: 414.897px;
-        bottom: 0;
-    }
-
-    @media(max-width: 1200px) {
-        bottom: 0;
-    }
-
-    @media(max-width: 830px) {
-        bottom: 0;
-    }
-
-    @media(max-width: 605px) {
-        bottom: 0;
-    }
-
-    @media(max-width: 430px) {
         bottom: 0;
     }
 }

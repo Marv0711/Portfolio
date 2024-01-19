@@ -2,7 +2,9 @@
     padding-left: 85px;
     margin-top: 150px;
     display: flex;
-    max-width: 1920px;
+    z-index: 10;
+    position: relative;
+    width: 100%;
 
     @media(max-width: 1430px) {
         flex-direction: column-reverse;
@@ -127,12 +129,10 @@
 .shadow-img {
     width: 428.594px;
     height: 951.441px;
-    flex-shrink: 0;
     position: absolute;
-    left: -63px;
-    top: 0px;
+    left: 0;
     display: flex;
-    z-index: -1;
+    z-index: 2;
     filter: blur(5.5px);
 
     @media(max-width: 620px) {

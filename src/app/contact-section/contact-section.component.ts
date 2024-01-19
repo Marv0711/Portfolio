@@ -39,7 +39,29 @@ export class ContactSectionComponent {
 
   @ViewChild('button') button!: ElementRef;
 
+  smallscreen = true;
+  bigscreen = true;
 
+  ngOnInit() {
+    this.checkScreenSize();
+  }
+
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkScreenSize();
+  }
+
+  checkScreenSize(){
+    if(window.innerWidth >= 1920){
+      this.bigscreen = true
+      this.smallscreen = false
+    }
+    else{
+      this.smallscreen = true
+      this.bigscreen = false
+    }
+  }
 
   async sendMessage() {
     this.setFieldDisabeldTrue();

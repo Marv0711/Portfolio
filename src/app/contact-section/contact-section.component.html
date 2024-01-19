@@ -155,7 +155,8 @@
             </div>
             <div class="arrow-over-container"><img (click)="up()" (mouseleave)="swapImgBack()" (mouseenter)="swapImg()"
                     id="arrow-up" class="arrow-up-container" src="/assets/img/arrow-up-line.svg" alt=""></div>
-            <img id="shadowEnglish" class="shadow" src="assets/img/contact-shadow.svg" alt="">
+            <img *ngIf="smallscreen" id="shadowEnglish" class="shadow small" src="assets/img/contact-shadow.svg" alt="">
         </div>
     </div>
 </div>
+<img *ngIf="bigscreen" id="shadowEnglish" class="shadow big" src="assets/img/contact-shadow.svg" alt="">
