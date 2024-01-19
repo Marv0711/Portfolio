@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-gardient-hero-section',
@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './gardient-hero-section.component.scss'
 })
 export class GardientHeroSectionComponent {
-  public toContact(){
+
+  public toContact() {
     window.location.href = window.location.pathname + '#contact';
-}
+  }
 }

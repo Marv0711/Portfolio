@@ -4,4 +4,13 @@ body{
 
 app-header-section{
     max-width: 1920px;
+    display: flex;
+    margin: 0 auto;
+}
+
+app-gardient-hero-section{
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
