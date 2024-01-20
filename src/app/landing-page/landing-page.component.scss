@@ -32,3 +32,40 @@ app-contact-section{
     display: flex;
     margin: 0 auto;
 }
+
+.vector{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    margin-top: -32%;
+
+    @media(max-width: 1500px) {
+        margin-top: -39%;
+    }
+    @media(max-width: 1230px) {
+        margin-top: -43%;
+    }
+    @media(max-width: 946px) {
+        margin-top: -49%;
+    }
+    @media(max-width: 690px) {
+        margin-top: -50%;
+    }
+    @media(max-width: 660px) {
+        margin-top: -60%;
+    }
+    @media(max-width: 450px) {
+        margin-top: -63%;
+    }
+    @media(max-width: 414px) {
+        margin-top: -83%;
+    }
+    @media(max-width: 368px) {
+        margin-top: -91%;
+    }
+    @media(max-width: 360px) {
+        margin-top: -111%;
+    }
+}

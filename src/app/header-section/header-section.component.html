@@ -4,9 +4,9 @@
     </div>
     <div class="navBar-container">
         <a [ngClass]="{ 'activ-button': activeSection == 'aboutMe' }" (click)="activButton('aboutMe')"
-            href="#aboutMe">About me</a>
+            href="#aboutMe"><span translate>About me</span></a>
         <a [ngClass]="{ 'activ-button': activeSection == 'skills' }" (click)="activButton('skills')"
-            href="#skills">Skills</a>
+            href="#skills"><span translate>Skills</span></a>
         <a [ngClass]="{ 'activ-button': activeSection == 'portfolio' }" (click)="activButton('portfolio')"
             href="#portfolio">Portfolio</a>
         <a [ngClass]="{ 'activ-button': activeSection == 'contact' }" (click)="activButton('contact')"

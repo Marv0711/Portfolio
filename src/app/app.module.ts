@@ -18,7 +18,8 @@ import { MyProjectsSectionComponent } from './my-projects-section/my-projects-se
 import { MyPolicySectionComponent } from './my-policy-section/my-policy-section.component';
 import { MySkillsSectionComponent } from './my-skills-section/my-skills-section.component';
 import { FormsModule }   from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { BetterGardientHeroSectionComponent } from './better-gardient-hero-section/better-gardient-hero-section.component'
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -37,7 +38,8 @@ export function createTranslateLoader(http: HttpClient) {
         ImpressumSectionComponent,
         MyProjectsSectionComponent,
         MyPolicySectionComponent,
-        MySkillsSectionComponent
+        MySkillsSectionComponent,
+        BetterGardientHeroSectionComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
