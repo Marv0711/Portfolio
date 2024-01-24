@@ -11,6 +11,6 @@ export class AppComponent {
   title = 'my-prtfolio';
 
   constructor(public translate: TranslateService) {
-    
+    translate.use('en');
   }
 }

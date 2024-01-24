@@ -12,6 +12,10 @@
     background-size: cover;
     display: flex;
     justify-content: flex-start;
+
+    @media(max-width: 490px) {
+        margin-top: 50px;
+    }
 }
 
 .both-shadow{
@@ -21,6 +25,12 @@
 
     @media(max-width: 490px) {
         height: 500px;
+    }
+}
+
+.scroll-down-german{
+    @media(max-width: 900px) {
+        font-size: 18px;
     }
 }
 
@@ -95,7 +105,7 @@
     transform: rotate(-90deg);
     text-align: center;
 
-    @media(max-width: 450px) {
+    @media(max-width: 485px) {
         display: none;
     }
 }

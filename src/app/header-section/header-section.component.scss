@@ -8,9 +8,10 @@
     width: 100%;
 
     @media(max-width:1050px) {
-        position: sticky;
+        position: fixed;
         z-index: 99;
         top: 0;
+        box-sizing: border-box;
     }
 
     @media(max-width: 620px) {
